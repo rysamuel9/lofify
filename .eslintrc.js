@@ -15,6 +15,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'no-unused-vars': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
@@ -39,6 +40,11 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'prettier/prettier': 'warn',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 };
