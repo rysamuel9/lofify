@@ -18,3 +18,30 @@ model User {
   email     String   @unique
   password  String
 }
+
+// song can belong to one artist
+model Song {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+  name      String
+  artist    Artist   @relation(fields: [artistId], references: [id])
+  artistId  Int
+}
+
+// one-to-many relationship
+
+// artist can have many song
+model Artist {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+  name      String
+  songs     Song[]
+}
+
+// model Artist {
+//   id        Int      @id @default(autoincrement())
+//   createdAt DateTime @default(now())
+//   updateAt  DateTime @updatedAt
+// }
