@@ -58,6 +58,7 @@ const run = async () => {
   );
 };
 
+// run function only gets executed when we run the seed command
 run()
   .then()
   .catch((e) => {
