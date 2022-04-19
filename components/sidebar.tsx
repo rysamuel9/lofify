@@ -34,16 +34,16 @@ const musicMenu = [
   },
 ];
 
-const playlists = new Array(10).fill(1).map((_, i) => `Playlist ${i + 1}`);
+const playlists = new Array(20).fill(1).map((_, i) => `Playlist ${i + 1}`);
 
 const Sidebar = () => {
   return (
     <Box width="100%" height="calc(100vh - 100px)" bg="black" paddingX="5px" color="gray">
       <Box paddingY="20px" height="100%">
-        <Box width="120px" marginBottom="20px" paddingX="20px">
+        <Box width="120px" marginBottom="10px" paddingX="20px">
           <NextImage src="/lofify.svg" height={60} width={120} />
         </Box>
-        <Box marginBottom="20px">
+        <Box marginBottom="10px">
           <List spacing={2}>
             {navMenu.map((menu) => (
               <ListItem paddingX="20px" fontSize="16px" key={menu.name}>
@@ -59,7 +59,7 @@ const Sidebar = () => {
             ))}
           </List>
         </Box>
-        <Box marginTop="20px">
+        <Box marginTop="20px" marginBottom="10px">
           <List spacing={2}>
             {musicMenu.map((menu) => (
               <ListItem paddingX="20px" fontSize="16px" key={menu.name}>
