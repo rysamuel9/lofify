@@ -28,8 +28,13 @@ const AuthForm: FC<{ mode: 'signin' | 'signup' }> = ({ mode }) => {
       <Flex justify="center" align="center" height="calc(100vh - 100px)">
         <Box padding="50px" bg="gray.900" borderRadius="6px">
           <form onSubmit={handleSubmit}>
-            <Input placeholder="email" type="email" onChange={(e) => setEmail(e.target.value)} />
-            <Input placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)} />
+            <Input placeholder="email" type="email" onChange={(e) => setEmail(e.target.value)} marginBottom="10px" />
+            <Input
+              placeholder="password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              marginBottom="10px"
+            />
             <Button
               type="submit"
               bg="green.500"
