@@ -18,14 +18,16 @@ export const validateRoute = (handler) => {
         if (!user) {
           throw new Error('Not real user');
         }
-      } catch (e) {
-        res.status(401).json({ error: 'Not Authorized' });
+      } catch (error) {
+        res.status(401);
+        res.json({ error: 'Not Authorizied' });
         return;
       }
+
       return handler(req, res, user);
     }
-    res.status(401).json({ error: 'Not Authorized' });
+
+    res.status(401);
+    res.json({ error: 'Not Authorizied' });
   };
 };
-
-export default validateRoute;
